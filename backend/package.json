@@ -11,8 +11,12 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "express-rate-limit": "^5.2.6",
+    "express-session": "^1.17.1",
     "fs": "*",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",

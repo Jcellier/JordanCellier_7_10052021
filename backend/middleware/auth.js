@@ -1,16 +1,58 @@
+// Imports
 const jwt = require("jsonwebtoken");
+const models = require("../models");
+require("dotenv").config({ path: "../.env" });
 
-module.exports = (req, res, next) => {
-  try {
-    const token = req.headers.authorization.split(" ")[1];
-    const decodedToken = jwt.verify(token, "SECRET_TOKEN");
-    const userId = decodedToken.userId;
-    if (req.body.userId && req.body.userId !== userId) {
-      throw "User Id unvalid!";
-    } else {
-      next();
-    }
-  } catch (error) {
-    res.status(401).json({ error: error | "Unidentified request!" });
+// Durée du token (3j)
+const maxAge = 3 * 24 * 60 * 60 * 1000;
+
+exports.generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_TOKEN, {
+    expiresIn: maxAge,
+  });
+};
+
+exports.checkUser = (req, res, next) => {
+  const token = req.cookies.jwt;
+  console.log(token);
+  if (token) {
+    jwt.verify(token, process.env.JWT_TOKEN, async (err, decodedToken) => {
+      if (err) {
+        res.locals.user = null;
+        res.cookie("jwt", "", { maxAge: 1 });
+        next();
+      } else {
+        let user = await models.User.findOne({
+          where: { id: decodedToken.id },
+        });
+        if (user) {
+          res.locals.user = user;
+          console.log(user);
+          next();
+        } else {
+          res.status(400).send({ message: "l'utilisateur n'a pas été trouvé" });
+        }
+      }
+    });
+  } else {
+    res.locals.user = null;
+    next();
+  }
+};
+
+exports.requireAuth = (req, res, next) => {
+  const token = req.cookies.jwt;
+  console.log(token);
+  if (token) {
+    jwt.verify(token, process.env.JWT_TOKEN, (err, decodedToken) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(decodedToken.id);
+        next();
+      }
+    });
+  } else {
+    console.log("no token !");
   }
 };
