@@ -1,0 +1,16 @@
+/* ********** components/_inputForm.scss ********** */
+
+input,
+textarea {
+  resize: none;
+  border-radius: 20px;
+  width: 270px;
+  font-family: $font-1;
+background: $color-dark-1;
+color: $grey;
+}
+textarea {
+  &:focus {
+    border: 1px solid $grey;
+  }
+}

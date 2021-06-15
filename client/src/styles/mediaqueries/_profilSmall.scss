@@ -1,0 +1,71 @@
+/* ********** mediaqueries/_profilSmall.scss ********** */
+
+@media screen and(max-width: 550px) {
+	.main-profil {
+		grid-template-columns: 60px 1fr;
+		.profil-page{
+			.log-container{
+				grid-template-columns: 1fr;
+				.img-container{
+					display: none;
+				}
+			}
+			.update-container{
+				.right-part{
+					padding: 10px 5px 10px 5px;
+				}
+			}
+		}
+		.connection-form {
+			min-width: 200px;
+			.form-container {
+				grid-template-columns: 1fr;
+				ul {
+					li {
+						width: 80%;
+						margin: 0 auto;
+					}
+					#login {
+						margin-bottom: 30px;
+
+						&:after {
+							content: '';
+							position: absolute;
+							bottom: -10px;
+							left: 50%;
+							transform: translateX(-50%);
+							width: 80%;
+							height: 1px;
+							background: $color-2;
+						}
+					}
+				}
+			}
+		}
+		.contact-container {
+			display: none;
+		}
+	}
+}
+
+@media screen and(max-width: 430px) {
+	.main-profil {
+		.profil-page {
+			.profil-container {
+				.icons {
+					.h1 {
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and(min-width: 550px) {
+	.main-profil {
+		.card-container {
+			padding: 50px;
+		}
+	}
+}

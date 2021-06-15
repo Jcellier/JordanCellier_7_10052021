@@ -1,0 +1,18 @@
+/* ********** mediaqueries/_contactLarge.scss ********** */
+
+@media screen and(max-width: 990px) {
+	.contact-container {
+		width: 100%;
+		border-radius: 0;
+		ul {
+			.user-hint {
+				display: flex;
+				justify-content: center;
+				border-bottom: none;
+				p {
+					display: none;
+				}
+			}
+		}
+	}
+}

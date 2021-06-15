@@ -1,0 +1,30 @@
+/* ********** mediaqueries/_homeSmall.scss ********** */
+
+@media screen and(max-width: 550px) {
+	.home {
+		grid-template-columns: 45px 1fr;
+		.right-side {
+			display: none;
+		}
+		.connection-form {
+			padding: 10px 5px 10px 5px !important;
+			input,
+			textarea {
+				width: auto;
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 790px) {
+	.home {
+		.connection-form {
+			.form-container {
+				grid-template-columns: 1fr;
+				ul {
+					flex-direction: row;
+				}
+			}
+		}
+	}
+}

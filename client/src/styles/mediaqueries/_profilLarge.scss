@@ -1,0 +1,79 @@
+/* ********** mediaqueries/_profilLarge.scss ********** */
+
+@media screen and(max-width: 700px) {
+	.main-profil {
+		.profil-page {
+			.update-container {
+				grid-template-columns: 1fr;
+				> div {
+					margin: 10px 10px;
+					padding: 10px 0 10px 0;
+				}
+			}
+		}
+	}
+}
+
+@media screen and(min-width: 850px) {
+	.main-profil {
+		.post-container {
+			padding: 30px 100px 30px 100px;
+		}
+	}
+}
+
+@media screen and(max-width: 885px) {
+	.main-profil {
+		.profil-page {
+			.log-container {
+				grid-template-columns: 1fr;
+			}
+			.img-container {
+				img {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 950px) {
+	.main-profil {
+		.profil-page {
+			.img-container {
+				img {
+					height: 200px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 1050px) {
+	.main-profil {
+		.profil-page {
+			.img-container {
+				img {
+					height: 220px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 1121px) {
+	.main-profil {
+		.profil-page {
+			.update-container {
+				.left-part {
+					form {
+						input[type='file'] {
+							opacity: 0;
+							transform: translate(-135px, -50%);
+						}
+					}
+				}
+			}
+		}
+	}
+}

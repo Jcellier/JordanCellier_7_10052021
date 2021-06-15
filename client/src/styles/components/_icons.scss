@@ -1,0 +1,9 @@
+/* ********** components/_icons.scss ********** */
+
+i {
+  transition: 0.15s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,27 @@
+/* ********** mediaqueries/_leftNavSmall.scss ********** */
+
+@media screen and(max-width: 590px) {
+	.left-nav-container {
+		.icons {
+			.icons-bis {
+				a {
+					&:hover::before {
+						background: $color-1;
+						height: 34px;
+						width: 34px;
+					}
+					img {
+						height: 34px;
+						width: 34px;
+					}
+				}
+				.active-left-nav {
+					&::after {
+						height: 33px;
+						left: -8px;
+					}
+				}
+			}
+		}
+	}
+}

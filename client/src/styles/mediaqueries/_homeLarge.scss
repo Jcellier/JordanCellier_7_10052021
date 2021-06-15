@@ -1,0 +1,13 @@
+/* ********** mediaqueries/_homeLarge.scss ********** */
+
+@media screen and(max-width: 990px) {
+	.home {
+		grid-template-columns: 60px 1fr 120px;
+		.right-side {
+			margin: 0;
+			.trending-container {
+				display: none;
+			}
+		}
+	}
+}

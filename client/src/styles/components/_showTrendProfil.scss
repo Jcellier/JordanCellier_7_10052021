@@ -1,0 +1,53 @@
+/* ********** components/_showTrendProfil.scss ********** */
+
+.showTrendProfil {
+	background-color: $color-dark-3;
+	position: absolute;
+	padding: 0;
+	z-index: 3;
+	top: 50px;
+	height: 350px;
+	right: 10px;
+	transform-origin: center;
+	min-width: 500px;
+	max-width: 600px;
+	border-radius: 20px;
+	transform: scaleY(0);
+	animation: scale 0.5s ease forwards;
+
+	span {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		color: $white;
+		cursor: pointer;
+		&:hover {
+			transform: scale(1.1);
+			transition: 0.2s;
+		}
+	}
+	.profilTrend-container {
+		padding: 10px;
+		display: grid;
+		grid-template-rows: 155px 175px;
+		.user-info {
+			display: flex;
+			img {
+				border-radius: 20px;
+				height: 150px;
+			}
+			h1 {
+				color: $white;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				padding: 10px;
+			}
+		}
+		.user-bio {
+			border-radius: 20px;
+			border: 1px solid $grey;
+			padding: 10px;
+			margin-top: 10px;
+		}
+	}
+}

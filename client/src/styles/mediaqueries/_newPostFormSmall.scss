@@ -1,0 +1,73 @@
+/* ********** mediaqueries/_newPostFormSmall.scss ********** */
+
+@media screen and(max-width: 440px) {
+	.post-container {
+		post.form {
+			.card-container {
+				.card-right {
+					.card-header {
+						.pseudo {
+							transform: translateY(-8px);
+						}
+						span {
+							left: 14px;
+							top: 60px;
+						}
+					}
+				}
+			}
+			.footer-form {
+				.btn-send {
+					button {
+						font-size: 0.8rem;
+						padding: 8px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 590px) {
+	.post-container {
+		post.form {
+			.card-container {
+				.card-left {
+					img {
+						margin-left: 0;
+					}
+				}
+				.card-right {
+					margin-left: 0;
+					.card-header {
+						margin: 0;
+						span {
+							left: 68px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 632px) {
+	.post-container {
+		post.form {
+			.card-container {
+				.card-right {
+					.card-header {
+						flex-direction: column;
+						span {
+							position: absolute;
+							top: 40px;
+						}
+					}
+					.content {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}

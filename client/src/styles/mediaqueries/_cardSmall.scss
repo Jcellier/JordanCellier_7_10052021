@@ -1,0 +1,56 @@
+/* ********** mediaqueries/_cardSmall.scss ********** */
+
+@media screen and(max-width: 590px) {
+	.card-container {
+		grid-template-columns: 1fr;
+		.card-left {
+			position: absolute;
+			transform: translate(17px, 18px);
+			img {
+				height: 40px;
+				width: 40px;
+				margin-left: 18px;
+				border-radius: 14px;
+			}
+		}
+		.card-right {
+			margin-left: 18px;
+			.card-header {
+				margin: 12px 0 14px;
+				.pseudo {
+					margin-left: 52px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and(max-width: 440px) {
+	.card-container {
+		padding-top: 26px;
+		.card-right {
+			.card-header {
+				flex-direction: column;
+				.pseudo {
+					transform: translateY(-18px);
+					span {
+						margin: 0px 0 -10px;
+						padding: 0;
+					}
+				}
+			}
+			p {
+				margin-top: -18px;
+			}
+			.comment-container {
+				img {
+					height: 37px;
+					width: 37px;
+				}
+				.comment-header {
+					flex-direction: column;
+				}
+			}
+		}
+	}
+}
